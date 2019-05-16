@@ -2,3 +2,8 @@
 composer.phar
 composer.lock
 .DS_Store
+package.json
+yarn.lock
+package.lock
+node_modules
+.idea
