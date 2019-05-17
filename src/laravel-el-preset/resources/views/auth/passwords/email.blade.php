@@ -2,6 +2,6 @@
 
 @section('content')
 
-{-- Content here --}
+    <request-reset-email :errors="@json($errors ?? [])"></request-reset-email>
 
 @endsection

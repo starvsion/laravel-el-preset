@@ -38,24 +38,3 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
-/** Element UI Menu uses vue-router, enable this if you wish to use it*/
-//import VueRouter from "vue-router";
-
-import Vue                       from "vue";
-import ElementUI                 from "element-ui";
-import { Message, Notification } from "element-ui";
-
-/** Element UI default locale is Simplified Chinese, do this to switch to English */
-import locale                    from "element-ui/lib/locale/lang/en";
-
-Vue.use(ElementUI, {locale});
-global.Message = Message;
-global.Notification = Notification;
-
-import App from "./components/App";
-
-new Vue({
-    el: '#app',
-    render: h => h(App)
-});

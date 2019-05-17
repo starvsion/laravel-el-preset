@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-
-{-- Content here --}
-
+    <register :errors="@json($errors ?? [])"></register>
 @endsection

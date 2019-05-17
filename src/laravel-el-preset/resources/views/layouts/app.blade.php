@@ -11,9 +11,19 @@
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+        <base href="{{env('APP_URL')}}">
     </head>
     <body>
-       @yield('content')
+        <div id="app">
+            <el-container>
+                <el-header>
+                    <navigation :has-login="true" :has-register="true"/>
+                </el-header>
+                <el-main>
+                    @yield('content')
+                </el-main>
+            </el-container>
+        </div>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

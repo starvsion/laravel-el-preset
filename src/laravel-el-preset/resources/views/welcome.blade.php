@@ -2,8 +2,8 @@
 
 @section('content')
     <div id="app">
-       <app :has-register="{{Route::has('register')}}"
-            :has-login="{{Route::has('login') || ! Auth::check()}}"
-            current-route="welcome"></app>
+        <navigation :has-register="{{Route::has('register')}}"
+                    :has-login="{{Route::has('login') || ! Auth::check()}}"></navigation>
+        <welcome></welcome>
     </div>
 @endsection

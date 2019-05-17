@@ -2,6 +2,6 @@
 
 @section('content')
 
-{-- Content here --}
+    <reset-password :errors="@json($errors ?? [])"></reset-password>
 
 @endsection

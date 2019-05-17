@@ -2,6 +2,7 @@
 
 @section('content')
     <div id="app">
-        <default-navigation></default-navigation>
+        <navigation :has-register="{{Route::has('register')}}"
+            :has-login="{{Route::has('login') || ! Auth::check()}}"></navigation>
     </div>
 @endsection

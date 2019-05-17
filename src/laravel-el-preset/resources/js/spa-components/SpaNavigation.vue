@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        name: "DefaultNavigation",
+        name: "SpaNavigation",
         props: {
             hasLogin: {
                 type: Boolean,

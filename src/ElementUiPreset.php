@@ -77,13 +77,8 @@ class ElementUiPreset extends Preset
      */
     protected static function updateBootstrapping ()
     {
-        // remove exisiting bootstrap.js file
-        (new Filesystem)->delete(
-            resource_path('assets/js/bootstrap.js')
-        );
-
-        // copy a new bootstrap.js file from your stubs folder
-        copy(__DIR__ . '/laravel-el-preset/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
+        (new Filesystem())->deleteDirectories(resource_path('js/components'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/laravel-el-preset/resources/js', resource_path('js'));
     }
 
      /**
@@ -123,9 +118,9 @@ class ElementUiPreset extends Preset
         copy(__DIR__ . '/laravel-el-preset/Controllers/HomeController.php',
             app_path('Http/Controllers/HomeController.php'));
 
-        // Add Auth routes in 'routes/web.php'
-        $auth_route_entry = "Auth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n\nRoute::fallback(function(){return redirect('/');});";
-        file_put_contents('./routes/web.php', $auth_route_entry, FILE_APPEND);
+      /*  // Add Auth routes in 'routes/web.php'
+        $auth_route_entry = "Auth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n\n;
+        file_put_contents('./routes/web.php', $auth_route_entry, FILE_APPEND);*/
 
         // Copy Skeleton auth views from the stubs folder
         (new Filesystem)->copyDirectory(__DIR__ . '/laravel-el-preset/resources/views', resource_path('views'));

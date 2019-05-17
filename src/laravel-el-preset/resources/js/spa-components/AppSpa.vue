@@ -12,12 +12,12 @@
 </template>
 
 <script>
-    import Vue               from "vue";
-    import VueRouter         from "vue-router";
-    import DefaultNavigation from "./DefaultNavigation";
-    import Welcome           from "./Welcome";
-    import Login from "./Login";
-    import Register from "./Register";
+    import Vue               from "vue/types";
+    import VueRouter         from "vue-router/types";
+    import DefaultNavigation from "./SpaNavigation";
+    import Welcome           from "../components/Welcome";
+    import Login             from "../components/Login";
+    import Register          from "../components/Register";
     Vue.use(VueRouter);
 
     const routes = [
@@ -48,7 +48,7 @@
     });
 
     export default {
-        name: "App",
+        name: "AppSpa",
         props: {
             hasLogin: {
                 type: Boolean,
